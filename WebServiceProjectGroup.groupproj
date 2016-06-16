@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{683A489E-6682-46E9-8C1B-95B6C89D4980}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="WebService\TestNetComWebService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="COMDLL\WebServiceCaller.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DelphiHost\DelphiHost.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestNetComWebService">
+        <MSBuild Projects="WebService\TestNetComWebService.dproj"/>
+    </Target>
+    <Target Name="TestNetComWebService:Clean">
+        <MSBuild Projects="WebService\TestNetComWebService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestNetComWebService:Make">
+        <MSBuild Projects="WebService\TestNetComWebService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WebServiceCaller">
+        <MSBuild Projects="COMDLL\WebServiceCaller.dproj"/>
+    </Target>
+    <Target Name="WebServiceCaller:Clean">
+        <MSBuild Projects="COMDLL\WebServiceCaller.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebServiceCaller:Make">
+        <MSBuild Projects="COMDLL\WebServiceCaller.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DelphiHost">
+        <MSBuild Projects="DelphiHost\DelphiHost.dproj"/>
+    </Target>
+    <Target Name="DelphiHost:Clean">
+        <MSBuild Projects="DelphiHost\DelphiHost.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiHost:Make">
+        <MSBuild Projects="DelphiHost\DelphiHost.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestNetComWebService;WebServiceCaller;DelphiHost"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestNetComWebService:Clean;WebServiceCaller:Clean;DelphiHost:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestNetComWebService:Make;WebServiceCaller:Make;DelphiHost:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
