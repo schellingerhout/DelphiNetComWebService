@@ -12,10 +12,10 @@ unit WebServiceCaller_TLB;
 // ************************************************************************ //
 
 // $Rev: 52393 $
-// File generated on 6/16/2016 3:16:38 PM from Type Library described below.
+// File generated on 6/17/2016 10:37:16 AM from Type Library described below.
 
 // ************************************************************************  //
-// Type Lib: C:\Projects\Webservice\COMDLL\WebServiceCaller (1)
+// Type Lib: C:\Users\jaspers\DelphiNetComWebService\COMDLL\WebServiceCaller (1)
 // LIBID: {A024806C-5700-435E-ADB5-245ADFDCC4BF}
 // LCID: 0
 // Helpfile:
@@ -73,8 +73,7 @@ type
 // *********************************************************************//
   IAutoWebService = interface(IDispatch)
     ['{4AE4CCCF-9664-4BEB-8D8E-A9AEB575065E}']
-    function HelloWorld(const YourName: WideString): WideString; safecall;
-    function NoWebServiceCall: WideString; safecall;
+    procedure DoNothing; safecall;
   end;
 
 // *********************************************************************//
@@ -84,8 +83,7 @@ type
 // *********************************************************************//
   IAutoWebServiceDisp = dispinterface
     ['{4AE4CCCF-9664-4BEB-8D8E-A9AEB575065E}']
-    function HelloWorld(const YourName: WideString): WideString; dispid 201;
-    function NoWebServiceCall: WideString; dispid 202;
+    procedure DoNothing; dispid 203;
   end;
 
 // *********************************************************************//

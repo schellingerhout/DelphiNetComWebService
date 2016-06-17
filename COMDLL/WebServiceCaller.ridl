@@ -6,7 +6,7 @@
 // However, when applying changes via the Editor this file will be regenerated
 // and comments or formatting changes will be lost.
 // ************************************************************************ //
-// File generated on 6/16/2016 3:16:38 PM (- $Rev: 12980 $, 42064515).
+// File generated on 6/17/2016 10:37:18 AM (- $Rev: 12980 $, 111704406).
 
 [
   uuid(A024806C-5700-435E-ADB5-245ADFDCC4BF),
@@ -30,10 +30,8 @@ library WebServiceCaller
   ]
   interface IAutoWebService: IDispatch
   {
-    [id(0x000000C9)]
-    HRESULT _stdcall HelloWorld([in] BSTR YourName, [out, retval] BSTR* Result);
-    [id(0x000000CA)]
-    HRESULT _stdcall NoWebServiceCall([out, retval] BSTR* Return);
+    [id(0x000000CB)]
+    HRESULT _stdcall DoNothing(void);
   };
 
   [

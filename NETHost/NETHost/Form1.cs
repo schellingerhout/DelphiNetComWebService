@@ -21,21 +21,10 @@ namespace NETHost
         private void button1_Click(object sender, EventArgs e)
         {
             IAutoWebService aws = new AutoWebService();
-            if (Environment.Is64BitProcess)
-            {
-                MessageBox.Show(aws.HelloWorld(".net 64-bit")); //AV here
-            }
-            else
-            {
-                MessageBox.Show(aws.HelloWorld(".net 32-bit"));
-            }
+            aws.DoNothing();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            IAutoWebService aws = new AutoWebService();
-            MessageBox.Show(aws.NoWebServiceCall());
-        }
+
 
     }
 }

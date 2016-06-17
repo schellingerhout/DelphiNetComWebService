@@ -11,7 +11,7 @@ type
   { Invokable interfaces must derive from IInvokable }
   ITestNETCom = interface(IInvokable)
   ['{4C1CC32A-0CD3-46B1-8E97-4B62C4F7EA06}']
-    function HelloWorld(const YourName: string) : string; stdcall;
+    procedure DoNothing; stdcall;
     { Methods of Invokable interface must not use the default }
     { calling convention; stdcall is recommended }
   end;

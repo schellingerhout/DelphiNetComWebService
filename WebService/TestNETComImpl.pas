@@ -11,7 +11,7 @@ type
   { TTestNETCom }
   TTestNETCom = class(TInvokableClass, ITestNETCom)
   public
-    function HelloWorld(const YourName: string) : string; stdcall;
+    procedure DoNothing; stdcall;
   end;
 
 implementation
@@ -19,9 +19,9 @@ implementation
 
 { TTestNETCom }
 
-function TTestNETCom.HelloWorld(const YourName: string): string;
+procedure TTestNETCom.DoNothing;
 begin
-  Result := 'Hello '+ YourName;
+
 end;
 
 initialization
